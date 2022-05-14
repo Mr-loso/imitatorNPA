@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F25DC86282C1CE700C0D61A /* etalonNS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F25DC84282C1CE700C0D61A /* etalonNS.cpp */; };
 		4FCF40DE281C10FE00D100E9 /* deviation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FCF40DD281C10FE00D100E9 /* deviation.cpp */; };
 		4FD482FB281D6D530024D8F8 /* speed.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FD482F9281D6D530024D8F8 /* speed.cpp */; };
 		4FD48300281D82870024D8F8 /* position.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FD482FE281D82870024D8F8 /* position.cpp */; };
@@ -29,6 +30,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4F25DC84282C1CE700C0D61A /* etalonNS.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = etalonNS.cpp; sourceTree = "<group>"; };
+		4F25DC85282C1CE700C0D61A /* etalonNS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = etalonNS.h; sourceTree = "<group>"; };
+		4F978877282D4473002F2C62 /* skoLogVne.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = skoLogVne.txt; sourceTree = "<group>"; };
+		4F978878282DA697002F2C62 /* configDescription.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = configDescription.txt; sourceTree = "<group>"; };
 		4FB23A90281AD202002F38C6 /* Imitator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Imitator; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FCF40DC281C0ECD00D100E9 /* deviation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = deviation.h; sourceTree = "<group>"; };
 		4FCF40DD281C10FE00D100E9 /* deviation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = deviation.cpp; sourceTree = "<group>"; };
@@ -57,6 +62,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F25DC83282C1CC000C0D61A /* Experiments */ = {
+			isa = PBXGroup;
+			children = (
+				4F25DC84282C1CE700C0D61A /* etalonNS.cpp */,
+				4F978877282D4473002F2C62 /* skoLogVne.txt */,
+				4F25DC87282C1CF300C0D61A /* Headers */,
+			);
+			path = Experiments;
+			sourceTree = "<group>";
+		};
+		4F25DC87282C1CF300C0D61A /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				4F25DC85282C1CE700C0D61A /* etalonNS.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
 		4FB23A87281AD202002F38C6 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +108,7 @@
 				4FE56F332826B0D7009D244B /* Config */,
 				4FD482FD281D6FC20024D8F8 /* Headers */,
 				4FD48306281D93E30024D8F8 /* Utilities */,
+				4F25DC83282C1CC000C0D61A /* Experiments */,
 			);
 			path = Imitator;
 			sourceTree = "<group>";
@@ -122,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				4FFF4C002826A3C200E22379 /* imitatorConfiguration.config */,
+				4F978878282DA697002F2C62 /* configDescription.txt */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -184,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FCF40DE281C10FE00D100E9 /* deviation.cpp in Sources */,
+				4F25DC86282C1CE700C0D61A /* etalonNS.cpp in Sources */,
 				4FD48300281D82870024D8F8 /* position.cpp in Sources */,
 				4FD48309281D94270024D8F8 /* radianControl.cpp in Sources */,
 				4FD48302281D83E00024D8F8 /* main.cpp in Sources */,

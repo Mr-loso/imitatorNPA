@@ -7,10 +7,10 @@
 
 using namespace std;
 
-int course (double kurs, double kursIzm, double kursDeviation) {
+int course (double kurs, double kursIzm, double kursDeviation, double kursDeviationSKO ) {
     
     //формирование погрешности измерений
-    kursDeviation += Wnoise(0.5);
+    kursDeviation = redNoise(kursDeviationSKO);
     
     //расчет текущего курса
     kurs = kursIzm + kursDeviation;

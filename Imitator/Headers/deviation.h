@@ -1,4 +1,5 @@
 #pragma once
 
-double Wnoise (double sko);
-double GALdeviation (double H);
+double noise (double sko);
+double redNoise(double SKO);
+double YanusLagDeviation(double H);
