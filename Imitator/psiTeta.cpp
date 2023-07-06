@@ -1,6 +1,6 @@
 #include <iostream>
 #include "math.h"
-#include "psiTeta.h"
+#include "Headers/psiTeta.h"
 #include "Utilities/Headers/radianControl.h"
 #include "Headers/deviation.h"
 

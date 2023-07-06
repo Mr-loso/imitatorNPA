@@ -1,11 +1,11 @@
-#include "speed.h"
-#include "deviation.h"
+#include "Headers/speed.h"
+#include "Headers/deviation.h"
 #include <iostream>
 #include <math.h>
 
 using namespace std;
 
-int speedINS (double* V, double* Vizm, double* Vxynk, double* Vdeviation, double kurs) {
+int speedINS (double* V, double* Vizm, double* Vxynk, double* Vdeviation, double accDeviation, double kurs, double time, double deltaT) {
     
     //весовой коэффициент
     double alpha = 0.9;
@@ -15,8 +15,11 @@ int speedINS (double* V, double* Vizm, double* Vxynk, double* Vdeviation, double
     Vizm[1] = Vxynk[1]*cos(kurs);
     
     //формирование погрешности измерений
-    Vdeviation[0] = redNoise(0.514/sqrt(2));
-    Vdeviation[1] = redNoise(0.514/sqrt(2));
+    Vdeviation[0] = redNoise(0.514/sqrt(2)) + pow(time, 0.84) * accDeviation;
+    Vdeviation[1] = redNoise(0.514/sqrt(2)) + pow(time, 0.84) * accDeviation;
+    
+//    Vdeviation[0] = redNoise(0.514/sqrt(2)) + time * accDeviation;
+//    Vdeviation[1] = redNoise(0.514/sqrt(2)) + time * accDeviation;
     
     // текущие значения становятся предыдущими
     V[0] = V[2];
@@ -27,7 +30,7 @@ int speedINS (double* V, double* Vizm, double* Vxynk, double* Vdeviation, double
     V[3] = V[3] + pow(alpha, 0.1)*(V[3]-V[1]) + (1-pow(alpha, 0.1))*Vdeviation[1];
     
     //вывод текущих значений скорости в консоль
-    cout << "      Vn: " <<V[2]<< "  Ve: "<< V[3];
+    //cout << "      Vn: " <<V[2]<< "  Ve: "<< V[3];
     
     return 0;
 }
@@ -54,7 +57,7 @@ int refreshGAL (double* V, double* Vizm, double* Vxynk, double* Vdeviation, doub
     V[3] = (alpha*Vizm[1]) + (1-alpha)*(V[1]+Vdeviation[1]);
     
     //вывод текущих значений скорости в консоль
-    cout << "      Vn: " <<V[2]<< "  Ve: "<< V[3];
+    //cout << "      Vn: " <<V[2]<< "  Ve: "<< V[3];
     
     return 0;
 }

@@ -1,9 +1,11 @@
 #include <iostream>
 #include <math.h>
-#include "position.h"
+#include "Headers/position.h"
 #include "Headers/deviation.h"
 
 using namespace std;
+
+
 
 //расчет координат на первом шаге решения задачи
 int firstStepPosition (double* position, double deltaFi0, double deltaW0) {
@@ -55,7 +57,7 @@ int positionINS (double* position, double* speeds, double deltaT) {
     position[3] = position[1] + deltaW / cos(position[0]);
     
     //вывод в консоль координат объекта
-    cout << "      fi: " << position[2] << "  lambda: " << position[3];
+    //cout << "      fi: " << position[2] << "  lambda: " << position[3];
     
     return 0;
 }
@@ -66,8 +68,10 @@ int positionSNS(double* position, double * truePosition) {
     position[0] = position[2];
     position[1] = position[3];
 
-    position[2] =( position[0] + truePosition[0]*3)/4;
-    position[3] =( position[1] + truePosition[1]*3)/4;
-    
+    double dev = (redNoise(30)+redNoise(30))/(111321*cos(position[3])*2);
+    position[2] = truePosition[0] + dev;
+    dev = (redNoise(30)+redNoise(30))/(111321*cos(position[3])*2);
+    position[3] = truePosition[1] + dev;
+
     return 0;
 }

@@ -19,7 +19,7 @@ int course (double kurs, double kursIzm, double kursDeviation, double kursDeviat
     kurs = radianControl(kurs);
     
     //вывод текущих показаний курса в консоль
-    cout << "      K: " << kurs;
+    //cout << "      K: " << kurs;
     
     return 0;
 }
